@@ -314,6 +314,7 @@ protected:
   DCmdArgument<char*> _filename;
   DCmdArgument<bool>  _all;
   DCmdArgument<jlong> _gzip;
+  DCmdArgument<bool> _overwrite;
 public:
   HeapDumpDCmd(outputStream* output, bool heap);
   static const char* name() {
@@ -339,6 +340,7 @@ public:
 class ClassHistogramDCmd : public DCmdWithParser {
 protected:
   DCmdArgument<bool> _all;
+  DCmdArgument<jlong> _parallel_thread_num;
 public:
   ClassHistogramDCmd(outputStream* output, bool heap);
   static const char* name() {
